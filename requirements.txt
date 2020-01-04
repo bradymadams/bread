@@ -1,0 +1,6 @@
+Flask
+Flask-Assets
+Flask-SQLAlchemy
+Flask-Login
+Flask-Admin
+cssmin

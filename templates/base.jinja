@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>{% block title %}$ Bread ${% endblock %}</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% assets "css" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+  <div>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

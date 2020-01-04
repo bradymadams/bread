@@ -1,0 +1,4 @@
+venv/
+.vscode/
+.webassets-cache/
+__pycache__/
