@@ -6,6 +6,9 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico">
 
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
 
   {% assets "css" %}
@@ -16,9 +19,15 @@
   {% endblock %}
 </head>
 <body>
-  <div>
-    {% block content %}
-    {% endblock %}
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+
+  <div class="content-wrapper">
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
   </div>
 </body>
 </html>

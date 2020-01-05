@@ -1,9 +1,38 @@
+@size1: ~"only screen and (max-width: 450px)";
+@size2: ~"only screen and (min-width: 451px) and (max-width: 800px)";
+@size3: ~"only screen and (min-width: 801px) and (max-width: 1100px)";
+@size4: ~"only screen and (min-width: 1101px)";
+
 @color1: #c4ff4e;
 @color2: #ff4ec4;
 @color3: #ff6c4e;
 @color4: #4effc4;
 
+@text-color: #202020;
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
     background-color: @color4;
+    color: @text-color;
+}
+
+nav {
+    padding: 20px;
+    margin: 0px 0px 10px 0px;
+    background-color: darken(spin(@color4, 30), 10%);
+}
+
+.content {
+    margin: 0 auto;
+}
+
+@media @size4 {
+    .content {
+        max-width: 1100px;
+    }
 }
