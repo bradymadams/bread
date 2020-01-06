@@ -1,7 +1,11 @@
 from flask import Flask, request, render_template
 import flask_assets
 
-app = Flask('bread')
+import account
+
+app = Flask('bread', template_folder='templates')
+
+app.register_blueprint(account.blueprint, url_prefix='/account')
 
 assets = flask_assets.Environment(app)
 
