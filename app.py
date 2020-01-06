@@ -1,11 +1,12 @@
 from flask import Flask, request, render_template
+from flask_sqlalchemy import SQLAlchemy
 import flask_assets
 
-import account
-
 app = Flask('bread', template_folder='templates')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bread.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
-app.register_blueprint(account.blueprint, url_prefix='/account')
+db = SQLAlchemy(app)
 
 assets = flask_assets.Environment(app)
 
@@ -16,6 +17,11 @@ styles = flask_assets.Bundle(
 )
 
 assets.register('css', styles)
+
+# Blueprints
+import account
+
+app.register_blueprint(account.blueprint, url_prefix='/account')
 
 @app.route('/')
 def home():
