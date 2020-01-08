@@ -8,6 +8,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 
+import models
+
 assets = flask_assets.Environment(app)
 
 styles = flask_assets.Bundle(
@@ -19,10 +21,13 @@ styles = flask_assets.Bundle(
 assets.register('css', styles)
 
 # Blueprints
-import account
-
-app.register_blueprint(account.blueprint, url_prefix='/account')
+#import account
+#app.register_blueprint(account.blueprint, url_prefix='/account')
 
 @app.route('/')
 def home():
     return render_template('home.jinja')
+
+@app.route('/account/')
+def all_accounts():
+    return render_template('account/all.jinja')
