@@ -2,3 +2,5 @@ venv/
 .vscode/
 .webassets-cache/
 __pycache__/
+
+bread.db
