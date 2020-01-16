@@ -11,8 +11,10 @@ class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(length=32))
     starting_balance = db.Column(db.Integer)
+    budget_id = db.Column(db.Integer, db.ForeignKey('budget.id'))
     null_category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
 
+    budget = db.relationship('Budget', backref=db.backref('accounts'))
     null_category = db.relationship('SpendCategory')
 
 class Transaction(db.Model):
